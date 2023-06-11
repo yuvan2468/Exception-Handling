@@ -1,0 +1,29 @@
+import java.io.*;
+import java.lang.*;
+class Exception1
+{
+  public static void main(String args[])throws IOException
+{
+  int payamt;
+  DataInputStream in=new DataInputStream(System.in);
+  System.out.println("\n pay out of bound exception");
+  System.out.println("***");
+  System.out.println("\nEnter a basic amount");
+  payamt=Integer.parseInt(in.readLine());
+  try
+{
+  if(payamt>1000)
+  throw new payoutofBoundException("Basic pay is out of bound");
+  else
+  System.out.println("\nGiven basic pay is" +payamt);
+}
+  catch (Exception e)
+{
+  System.out.println("caught:"+e);
+}}}
+ class payoutofBoundException extends IOException
+{
+  payoutofBoundException(String message)
+{
+  System.out.println(message);
+}}
